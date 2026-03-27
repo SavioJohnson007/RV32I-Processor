@@ -1,0 +1,26 @@
+Time resolution is 1 ps
+             ADD : FAIL (Exp=0000000f Got=ffffffff)
+             SUB : FAIL (Exp=0000000d Got=00000000)
+             AND : PASS
+              OR : FAIL (Exp=000000ff Got=00000000)
+             SLT : FAIL (Exp=00000001 Got=00000000)
+            SLTU : FAIL (Exp=00000001 Got=00000000)
+             SLL : FAIL (Exp=00000a00 Got=00000000)
+             SRL : FAIL (Exp=40000000 Got=00000000)
+             SRA : FAIL (Exp=c0000000 Got=00000000)
+            ADDI : FAIL (Exp=0000000f Got=00000000)
+            SLTI : FAIL (Exp=00000001 Got=00000000)
+           SLTIU : FAIL (Exp=00000001 Got=00000000)
+            SLLI : FAIL (Exp=00001e00 Got=00000000)
+            SRLI : FAIL (Exp=00000007 Got=00000000)
+            SRAI : FAIL (Exp=00000007 Got=00000000)
+              LW : FAIL (Exp=12345678 Got=00000000)
+              LB : FAIL (Exp=ffffffaa Got=00000000)
+              LH : FAIL (Exp=00003412 Got=00000000)
+              SW : FAIL (Exp=00000005 Got=xx785634)
+              SB : FAIL (Exp=00000005 Got=xxxxxxxx)
+              SH : FAIL (Exp=00000005 Got=xxxxxxxx)
+             LUI : FAIL (Exp=00123000 Got=00000000)
+
+TOTAL FAILURES=21
+$finish called at time : 310 ns : File "D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sim_1/new/testbench2.v" Line 218

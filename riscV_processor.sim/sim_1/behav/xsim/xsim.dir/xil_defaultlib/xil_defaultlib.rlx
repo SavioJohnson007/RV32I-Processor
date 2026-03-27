@@ -1,0 +1,13 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+D:/Xilinx/projects/riscV_processor/riscV_processor.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,,,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sim_1/new/testbench2.v,1771871631,verilog,,,,testbench,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/alu.v,1771749170,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/control_unit.v,,alu,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/control_unit.v,1771764242,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/data_mem.v,,alu_decoder;control_unit;main_decoder,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/data_mem.v,1771843633,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/extend.v,,data_mem;load_handler;store_handler,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/extend.v,1771759401,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/instr_mem.v,,extend,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/instr_mem.v,1771770134,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/processor.v,,instruction_mem,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/processor.v,1771867773,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/reg_file.v,,processor,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
+D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sources_1/imports/new/reg_file.v,1771871303,verilog,,D:/Xilinx/projects/riscV_processor/riscV_processor.srcs/sim_1/new/testbench2.v,,reg_file,,,../../../../../../2025.1/Vivado/data/rsb/busdef,,,,,
