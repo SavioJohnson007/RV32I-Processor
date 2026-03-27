@@ -1,15 +1,16 @@
-RV32I Processor (RISC-V 32-bit Integer Core)
+## RV32I Processor (RISC-V 32-bit Integer Core)
 
-This repository contains a custom-designed RV32I processor implementing the base integer instruction set of the RISC-V architecture. The design follows a modular approach, with clearly separated components such as the control unit, ALU, register file, instruction memory, and data memory.
+This repository contains a custom-designed RV32I processor implementing the base integer instruction set of the RISC-V architecture.
 
-The processor is built using a single-cycle architecture, making it simple, deterministic, and suitable for academic exploration and hardware understanding. It supports core instruction types including arithmetic, logical, load/store, and branch operations.
+The design follows a clean and modular single-cycle architecture, making it easy to understand, debug, and extend. Core components such as the control unit, ALU, register file, instruction memory, and data memory are implemented as separate modules for clarity and scalability.
 
-Key features:
+### Features
+- Full support for RV32I base integer instruction set
+- Single-cycle architecture for deterministic execution
+- Modular Verilog design
+- Byte-addressable instruction and data memory
+- Immediate generation for I-type, S-type, and B-type instructions
+- Clean and structured testbench for validation
 
-Full support for RV32I base instruction set
-Modular Verilog design for easy debugging and extension
-Byte-addressable instruction and data memory
-Immediate generation for I, S, and B-type instructions
-Comprehensive testbench with initialised memory and register states
-
-This project is intended for learning, experimentation, and as a foundation for extending into pipelined or advanced RISC-V implementations.
+### Purpose
+This project is intended for learning, academic use, and as a foundation for building more advanced RISC-V processors such as pipelined or multi-cycle architectures.
