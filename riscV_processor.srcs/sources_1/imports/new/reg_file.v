@@ -15,7 +15,7 @@ module reg_file(
         end
     end
     
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         if (WE3) begin
             if (A3 != 5'b00000) begin
                 register[A3] <= WD3;

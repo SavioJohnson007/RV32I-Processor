@@ -25,7 +25,10 @@ end
 endtask
 
 initial begin
-clk=0; rst=1; #10 rst=0;
+
+clk=0; rst=1; 
+#10
+rst=0;
 
 //////////////////////////////////////////////////
 // SOURCE REGISTER SETUP (Never used as rd)
@@ -36,7 +39,7 @@ dut.rf.register[3]=20;
 dut.rf.register[4]=7;
 dut.rf.register[5]=32'hF0;
 dut.rf.register[6]=32'h0F;
-dut.rf.register[7]=-1;
+//dut.rf.register[7]=-1;
 dut.rf.register[8]=1;
 dut.rf.register[9]=3;
 dut.rf.register[10]=32'h80000000;
@@ -55,11 +58,11 @@ dut.dmem.mem[10]=8'h78;
 dut.dmem.mem[20]=8'h34;
 dut.dmem.mem[21]=8'h12;
 
+
 // ======================================================
 // R-TYPE
 // ======================================================
 
-// x11 = x1 + x2
 // add x7,x1,x2  -> 0x002083B3
 dut.imem.mem[0]=8'hB3;  dut.imem.mem[1]=8'h83;
 dut.imem.mem[2]=8'h20;  dut.imem.mem[3]=8'h00;
@@ -177,7 +180,7 @@ dut.imem.mem[82]=8'h10; dut.imem.mem[83]=8'h00;
 dut.imem.mem[84]=8'h23; dut.imem.mem[85]=8'h1E;
 dut.imem.mem[86]=8'h10; dut.imem.mem[87]=8'h00;
 
-#300;
+#400;
 //////////////////////////////////////////////////
 // CHECKS
 //////////////////////////////////////////////////
