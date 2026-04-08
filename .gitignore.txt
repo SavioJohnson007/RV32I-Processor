@@ -1,0 +1,4 @@
+riscV_processor.cache/
+riscV_processor.hw/
+riscV_processor.ip_user_files/
+riscV_processor.sim/
