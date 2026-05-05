@@ -11,49 +11,56 @@ always #5 clk = ~clk;
 integer errors = 0;
 
 task check;
-    input [127:0] name;
-    input [31:0] actual;
-    input [31:0] expected;
-    
-    begin
-        if(actual === expected) begin
-            $display("PASS %-8s | Value = 0x%08h (%0d)", 
-                      name, actual, actual);
-        end
-        else begin
-            $display("FAIL %-8s", name);
-            $display("Expected : 0x%08h (%0d)", expected, expected);
-            $display("Got: 0x%08h (%0d)", actual, actual);
-    
-            $display("");
-    
-            $display("--- CONTEXT ---");
-            $display("PC : 0x%08h", dut.PC);
-            $display("Instr : 0x%08h", dut.Instr);
-            $display("ALUResult : 0x%08h", dut.ALUResult);
-            $display("SrcA : 0x%08h", dut.SrcA);
-            $display("SrcB : 0x%08h", dut.SrcB);
-            $display("RD2 : 0x%08h", dut.RD2);
-            $display("ImmExt : 0x%08h", dut.ImmExt);
-            $display("Result : 0x%08h", dut.Result);
-            $display("MemWrite : %b", dut.MemWrite);
-            $display("RegWrite : %b", dut.RegWrite);
-            $display("ALUCtrl : %b", dut.ALUControl);
-    
-            errors = errors + 1;
-        end
+input [127:0] name;
+input [31:0] actual;
+input [31:0] expected;
+
+reg [31:0] diff;
+begin
+    diff = actual ^ expected;
+
+    if(actual === expected) begin
+        $display("[PASS] %-8s | Value = 0x%08h (%0d)", 
+                  name, actual, actual);
     end
+    else begin
+        $display("[FAIL] %-8s", name);
+        $display("        Expected : 0x%08h (%0d)", expected, expected);
+        $display("        Got      : 0x%08h (%0d)", actual, actual);
+        $display("        XOR Diff : 0x%08h", diff);
+
+        // Bit-level mismatch reporting
+        $write("        Mismatch bits: ");
+        for (integer i = 31; i >= 0; i = i - 1) begin
+            if (diff[i]) $write("%0d ", i);
+        end
+        $display("");
+
+        // Context dump
+        $display("        --- CONTEXT ---");
+        $display("        PC        : 0x%08h", dut.PC);
+        $display("        Instr     : 0x%08h", dut.Instr);
+        $display("        ALUResult : 0x%08h", dut.ALUResult);
+        $display("        SrcA      : 0x%08h", dut.SrcA);
+        $display("        SrcB      : 0x%08h", dut.SrcB);
+        $display("        RD2       : 0x%08h", dut.RD2);
+        $display("        ImmExt    : 0x%08h", dut.ImmExt);
+        $display("        Result    : 0x%08h", dut.Result);
+        $display("        MemWrite  : %b", dut.MemWrite);
+        $display("        RegWrite  : %b", dut.RegWrite);
+        $display("        ALUCtrl   : %b", dut.ALUControl);
+
+        errors = errors + 1;
+    end
+end
 endtask
-integer j;
+
 initial begin
 
 clk=0; rst=1; 
 #10
 rst=0;
 
-for (j = 0; j < 32; j = j + 1) begin
-     dut.rf.register[j] = $urandom;
-end
 
 dut.rf.register[1]=5;
 dut.rf.register[2]=10;
@@ -147,6 +154,7 @@ dut.imem.mem[58]=8'h70; dut.imem.mem[59]=8'h00;
 dut.imem.mem[60]=8'h23; dut.imem.mem[61]=8'h24;
 dut.imem.mem[62]=8'h10; dut.imem.mem[63]=8'h00;
 
+// LUI
 
 // lui x24,0x00123 -> 0x00123C37
 dut.imem.mem[64]=8'h37; dut.imem.mem[65]=8'h3C;
